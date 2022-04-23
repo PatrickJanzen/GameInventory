@@ -1,0 +1,7 @@
+{
+  "name": "gi3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
