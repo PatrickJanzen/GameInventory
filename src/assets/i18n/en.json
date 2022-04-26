@@ -1,3 +1,9 @@
 {
-  "GAMES": "Games"
+  "GAMES": "Games",
+  "EDIT": "edit",
+  "GAME": {
+    "AGE": "years",
+    "PLAYER": "players"
+  }
+
 }
