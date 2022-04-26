@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <span *ngIf="game">{{ game.title }}</span>
+    </ion-buttons>
+
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon md="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="game">
+  {{ game.title }}
+</ion-content>

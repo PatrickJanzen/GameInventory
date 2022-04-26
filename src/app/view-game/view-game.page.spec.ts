@@ -1,20 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { ViewGamePageRoutingModule } from './view-game-routing.module';
 
-import { HomePage } from './home.page';
+import { ViewGamePage } from './view-game.page';
 
-describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
+describe('ViewGamePage', () => {
+  let component: ViewGamePage;
+  let fixture: ComponentFixture<ViewGamePage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
-      imports: [IonicModule.forRoot(), RouterModule.forRoot([])]
+      declarations: [ ViewGamePage ],
+      imports: [IonicModule.forRoot(), ViewGamePageRoutingModule, RouterModule.forRoot([])]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HomePage);
+    fixture = TestBed.createComponent(ViewGamePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

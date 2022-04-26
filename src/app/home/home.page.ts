@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DataService, Message } from '../services/data.service';
+import {DataService, Game} from '../services/data.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,10 @@ import { DataService, Message } from '../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private data: DataService) {}
+  constructor(private data: DataService, private translate: TranslateService) {
+    translate.setDefaultLang('de');
+    translate.use('de');
+  }
 
   refresh(ev) {
     setTimeout(() => {
@@ -15,8 +19,8 @@ export class HomePage {
     }, 3000);
   }
 
-  getMessages(): Message[] {
-    return this.data.getMessages();
+  getGames(): Game[] {
+    return this.data.getGames();
   }
 
 }
