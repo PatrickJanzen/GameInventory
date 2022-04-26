@@ -33,7 +33,7 @@ export class DataService {
     {
       id: 1,
       picture: null,
-      title: 'Solitär',
+      title: 'Test',
       ageFrom: 9,
       ageTo: null,
       playersFrom: 1,
