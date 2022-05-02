@@ -6,7 +6,7 @@ import { ViewGamePage } from './view-game.page';
 import { IonicModule } from '@ionic/angular';
 
 import { ViewGamePageRoutingModule } from './view-game-routing.module';
-import {TranslateModule} from "@ngx-translate/core";
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   imports: [

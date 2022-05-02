@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import {DataService, Game} from '../services/data.service';
+import {DataService} from '../services/data.service';
 import {TranslateService} from '@ngx-translate/core';
+import {Game} from '../data/game';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,10 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public searchField: FormControl;
+
   constructor(private data: DataService, private translate: TranslateService) {
+    this.searchField = new FormControl('');
     translate.setDefaultLang('de');
     translate.use('de');
   }
@@ -20,7 +25,10 @@ export class HomePage {
   }
 
   getGames(): Game[] {
-    return this.data.getGames();
+    return this.data.getGames(this.searchField.value);
   }
 
+  filter(event) {
+
+  }
 }

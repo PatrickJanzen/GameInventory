@@ -7,11 +7,12 @@
       <ion-button>
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
-      <ion-button color="secondary">
+      <ion-button>
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-searchbar placeholder="{{ 'SEARCH.PLACEHOLDER' | translate   }}" [formControl]="searchField" debounce="100" (ionChange)="filter($event)"></ion-searchbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -28,6 +29,6 @@
   </ion-header>
 
   <ion-list>
-    <app-game *ngFor="let game of getGames()" [game]="game"></app-game>
+    <app-game-list-item *ngFor="let game of getGames()" [game]="game"></app-game-list-item>
   </ion-list>
 </ion-content>

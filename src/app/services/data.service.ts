@@ -1,27 +1,15 @@
 import {Injectable} from '@angular/core';
-
-export interface Game {
-  id: number;
-  picture: string | null;
-  title: string;
-  description: string | null;
-  shelf: string | null;
-  playersFrom: number;
-  playersTo: number | null;
-  ageFrom: number;
-  ageTo: number | null;
-}
+import {Game} from '../data/game';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-
-  public games: Game[] = [];
-  public sgames: Game[] = [
+  public games: Game[] = [
     {
       id: 0,
-      picture: null,
+      // eslint-disable-next-line max-len
+      picture: 'https://cdn.rocketbay.net/assets/media/img/b/yxAAAOSwB1JgoNut/s-l1600/topwords-wortspiel-der-3-dimension-2002-hasbro-parker-scrabble-brettspiel-spiel.jpg',
       title: 'Topwords',
       ageFrom: 9,
       ageTo: null,
@@ -32,8 +20,8 @@ export class DataService {
     },
     {
       id: 1,
-      picture: null,
-      title: 'Test',
+      picture: 'https://www.optikunde.de/farbe/image/rot.png',
+      title: 'Test for space, and otherstuff!',
       ageFrom: 9,
       ageTo: null,
       playersFrom: 1,
@@ -43,14 +31,17 @@ export class DataService {
     }
   ];
 
-  constructor() {}
-
-  public getGames(): Game[] {
+  public getGames(filter: string): Game[] {
+    if (filter !== '') {
+      return this.games.filter(value => {
+        return value.title.toLowerCase().includes(filter.toLowerCase());
+      });
+    }
     return this.games;
   }
 
   getGameById(id: number) {
-    return this.games[id];
+    return this.games.find(game => game.id === id);
   }
 
 }

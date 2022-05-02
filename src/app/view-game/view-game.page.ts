@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService, Game } from '../services/data.service';
+import { DataService} from '../services/data.service';
+import {Game} from '../data/game';
 
 @Component({
   selector: 'app-view-game',
@@ -17,6 +18,6 @@ export class ViewGamePage implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.game = this.data.getGameById(parseInt(id, 10));
+    this.game = this.data.getGameById(parseInt(id,10));
   }
 }

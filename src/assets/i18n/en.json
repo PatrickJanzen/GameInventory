@@ -1,9 +1,12 @@
 {
-  "GAMES": "Games",
   "EDIT": "edit",
+  "FROMAGE": "from",
+  "GAMES": "Games",
   "GAME": {
     "AGE": "years",
     "PLAYER": "players"
+  },
+  "SEARCH": {
+    "PLACEHOLDER": "search for title"
   }
-
 }

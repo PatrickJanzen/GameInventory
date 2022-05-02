@@ -1,15 +1,16 @@
-
-
 <ion-item *ngIf="game" [detail]="false">
-  <ion-label class="ion-text-wrap" [routerLink]="'/game/' + game.id" >
+  <ion-label class="ion-text-wrap" [routerLink]="'/game/' + game.id">
+    <img src="{{ game.picture }}" alt="" />
     <h2>
       {{ game.title }}
     </h2>
     <h3>
       <ion-note *ngIf="!game.playersTo">{{ game.playersFrom }} {{ 'GAME.PLAYER' | translate }}</ion-note>
-      <ion-note *ngIf="game.playersTo">{{ game.playersFrom }} - {{ game.playersTo }} {{ 'GAME.PLAYER' | translate }}</ion-note><br>
+      <ion-note *ngIf="game.playersTo">{{ game.playersFrom }}
+        - {{ game.playersTo }} {{ 'GAME.PLAYER' | translate }}</ion-note>
+      <br>
       <ion-note *ngIf="game.ageTo">{{ game.ageFrom }} - {{ game.ageTo }} {{ 'GAME.AGE' | translate }}</ion-note>
-      <ion-note *ngIf="!game.ageTo">{{ game.ageFrom }} {{ 'GAME.AGE' | translate }}</ion-note>
+      <ion-note *ngIf="!game.ageTo">{{ 'FROMAGE' | translate }}{{ game.ageFrom }} {{ 'GAME.AGE' | translate }}</ion-note>
     </h3>
   </ion-label>
   <ion-buttons slot="start">

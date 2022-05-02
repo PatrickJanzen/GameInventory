@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'gi3',
+  appId: 'net.gnewikow.android',
+  appName: 'Game inventory',
   webDir: 'www',
   bundledWebRuntime: false
 };

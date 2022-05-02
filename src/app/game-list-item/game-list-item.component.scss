@@ -57,3 +57,12 @@ ion-footer ion-title {
   font-size: 11px;
   font-weight: normal;
 }
+
+.ion-text-wrap img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
